@@ -1,0 +1,13 @@
+{
+  "category": "Poetry Corner",
+  "items": [
+    {
+      "id": "po-blake-001",
+      "text_en": "Tyger Tyger, burning bright,\nIn the forests of the night;",
+      "text_ko": "불타는 듯 밝은 호랑이여,\n밤의 숲에서 빛나고 있구나;",
+      "work": "The Tyger",
+      "author": "William Blake",
+      "allow_linebreaks": true
+    }
+  ]
+}

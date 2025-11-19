@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:flutter/services.dart';
 
 class PracticeController extends GetxController {
   final sentence = "To be, or not to be, that is the question.".obs;
@@ -12,6 +13,10 @@ class PracticeController extends GetxController {
 
   DateTime? startTime;
   Timer? timer;
+
+  bool hapticsEnabled = true;
+  DateTime _lastHaptic = DateTime.fromMillisecondsSinceEpoch(0);
+  bool lastInputCorrect = true;
 
   // ===== Helper: 필수 비교 문자 판단 (영문/숫자/스페이스만) =====
   bool _isRequiredChar(String ch) {
@@ -51,6 +56,7 @@ class PracticeController extends GetxController {
     typed.value = input;
     _updateCharSpans();
     _calculateAccuracy();
+    _hapticType(heavy: !lastInputCorrect);
   }
 
   void _startTimer() {
@@ -133,8 +139,12 @@ class PracticeController extends GetxController {
 
       if (_isRequiredChar(t)) {
         if (j < inputFiltered.length) {
-          final match = t.toLowerCase() == inputFiltered[j].toLowerCase();
-          color = match
+          if (t.toLowerCase() == inputFiltered[j].toLowerCase()) {
+            lastInputCorrect = true;
+          } else {
+            lastInputCorrect = false;
+          }
+          color = lastInputCorrect
               ? const Color(0xFF4CAF50)
               : const Color(0xFFD32F2F); // 녹/빨
           j++; // 입력 소비
@@ -179,6 +189,19 @@ class PracticeController extends GetxController {
     accuracy.value = 100;
     timer?.cancel();
     _updateCharSpans(); // 새 문장 즉시 반영
+  }
+
+  void _hapticType({bool heavy = false}) {
+    if (!hapticsEnabled) return;
+    final now = DateTime.now();
+    if (now.difference(_lastHaptic).inMilliseconds < 15) return;
+    _lastHaptic = now;
+
+    if (heavy) {
+      HapticFeedback.vibrate();
+    } else {
+      HapticFeedback.heavyImpact();
+    }
   }
 
   @override

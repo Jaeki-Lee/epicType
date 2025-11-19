@@ -1,0 +1,21 @@
+{
+  "category": "Famous Speeches",
+  "items": [
+    {
+      "id": "fs-gettysburg-001",
+      "text_en": "Four score and seven years ago our fathers brought forth on this continent, a new nation, conceived in Liberty, and dedicated to the proposition that all men are created equal.",
+      "text_ko": "87년 전, 우리 선조들은 이 대륙에서 자유에 바탕을 두고 모든 인간은 평등하게 창조되었다는 명제에 헌신하는 새로운 나라를 탄생시켰습니다.",
+      "work": "Gettysburg Address",
+      "author": "Abraham Lincoln",
+      "allow_linebreaks": false
+    },
+    {
+      "id": "fs-jfk-001",
+      "text_en": "Ask not what your country can do for you—ask what you can do for your country.",
+      "text_ko": "나라가 당신을 위해 무엇을 해줄 수 있는지 묻지 말고, 당신이 나라를 위해 무엇을 할 수 있는지 물어라.",
+      "work": "Inaugural Address",
+      "author": "John F. Kennedy",
+      "allow_linebreaks": false
+    }
+  ]
+}

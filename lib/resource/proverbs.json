@@ -1,0 +1,13 @@
+{
+  "category": "Proverbs & Sayings",
+  "items": [
+    {
+      "id": "pv-001",
+      "text_en": "A journey of a thousand miles begins with a single step.",
+      "text_ko": "천 리 길도 한 걸음부터.",
+      "work": "Proverb",
+      "author": "Proverb",
+      "allow_linebreaks": false
+    }
+  ]
+}

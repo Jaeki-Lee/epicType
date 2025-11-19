@@ -1,0 +1,13 @@
+{
+  "category": "Classic Novels",
+  "items": [
+    {
+      "id": "cn-pride-001",
+      "text_en": "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      "text_ko": "막대한 재산을 가진 미혼 남자는 아내를 원하기 마련이라는 사실은 만인의 공통된 인정사항이다.",
+      "work": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "allow_linebreaks": false
+    }
+  ]
+}

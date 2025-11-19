@@ -83,8 +83,6 @@ class HomeView extends GetView<HomeController> {
         ],
       ),
     );
-
-    throw UnimplementedError();
   }
 
   Widget _buildCategoryTile(String title, String subtitle, IconData icon) {
